@@ -12,7 +12,7 @@
 
 #     return False 
 
-##Time Complexity O(arr ^ targetSum), 
+##Time Complexity O(n ^ m), where n = length of arr, m = targetSum
 ## If you draw a tree there are targetSum levels at worst & arr is constant at all levels
 ##Space Complexity O(targetSum), Since at worst case target sum stacks are needed  
 # print(canSum(13,[5,3,4,7])) #true
@@ -41,7 +41,8 @@ def canSum(targetSum, arr,memo=None):
     memo[targetSum] = False
     return False 
 
-#Time Complexity O(targetSum * arr), Space Complexity O(targetSum)
+#Time Complexity O(m * n), Space Complexity O(m)
+#where n = length of arr, m = targetSum
 print(canSum(13,[5,3,4,7])) #true
 
 print(canSum(300,[7,14])) #false
