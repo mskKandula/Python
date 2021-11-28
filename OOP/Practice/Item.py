@@ -24,7 +24,7 @@ class Item:
         assert quantity >=0, f"Quantity {quantity} is not greater than or equal to zero!"
 
         #Assigning values to self object
-        self.name = name
+        self.__name = name #double underScore makes the attribute private
         self.price = price
         self.quantity = quantity
 
@@ -38,6 +38,11 @@ class Item:
 
     def applyDiscount(self):
         self.price = self.price * self.pay_rate
+
+    #To make "name" attribute as read only
+    @property
+    def name(self):
+        return self.__name
 
 # item1 = Item("Phone",100,5)
 
