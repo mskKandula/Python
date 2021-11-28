@@ -1,4 +1,6 @@
 class Item:
+    pay_rate = 0.8 #class attribute
+
     def __init__(self,name:str, price:float, quantity=0) -> None:
         
         #Run Validations on received Arguments
@@ -14,10 +16,14 @@ class Item:
         return self.price * self.quantity
 
 
-item1 = Item("Phone",100,-5)
+item1 = Item("Phone",100,5)
 
-item2 = Item("Laptop",-200,3)
+item2 = Item("Laptop",200,3)
 
 print(item1.calculateTotalPrice())
 
 print(item2.calculateTotalPrice())
+
+print(item1.pay_rate)
+
+print(item1.__dict__) #To print the whole object as type dict
