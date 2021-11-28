@@ -44,6 +44,11 @@ class Item:
     def name(self):
         return self.__name
 
+    #Setter to set the name value
+    @name.setter
+    def name(self,value):
+        self.__name = value
+
 # item1 = Item("Phone",100,5)
 
 # item2 = Item("Laptop",200,3)

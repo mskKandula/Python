@@ -8,5 +8,5 @@ item1 = Item("Mobile",100,5)
 
 item1.name = "lappy"
 
-#Throws error since name attribute is read-only
+#Doesn't throw any error , since we defined the setter
 print(item1.name)
