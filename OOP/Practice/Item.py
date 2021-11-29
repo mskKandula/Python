@@ -39,15 +39,32 @@ class Item:
     def applyDiscount(self):
         self.price = self.price * self.pay_rate
 
+    #Encapsulation (No direct access to modify attributes)
     #To make "name" attribute as read only
     @property
     def name(self):
         return self.__name
 
+    #Encapsulation
     #Setter to set the name value
     @name.setter
     def name(self,value):
         self.__name = value
+
+    #making private to accessible only from class
+    def __setUpConnection(self):
+        pass
+
+    def __prepareBody(self):
+        pass
+
+    def __send(self):
+        pass
+
+    def sendEmail(self):
+        self.__setUpConnection()
+        self.__prepareBody()
+        self.__send()
 
 # item1 = Item("Phone",100,5)
 

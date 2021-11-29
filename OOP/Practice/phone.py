@@ -14,7 +14,7 @@ class Phone(Item):
     def validPhonesQuantity(self):
         self.quantity= self.quantity - self.phones_broken
 
-# phone1 = Phone("Apple",500000,10,3)
+phone1 = Phone("Apple",500000,10,3)
 
 # print(phone1.all_items)
 
@@ -23,3 +23,6 @@ class Phone(Item):
 # phone1.validPhonesQuantity()
 
 # print(phone1.calculateTotalPrice())
+
+#Abstraction(Hidden the unnecessary details)
+phone1.sendEmail()
