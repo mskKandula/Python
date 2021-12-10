@@ -18,7 +18,7 @@ while(url):
 
     result = contain.find('div',class_='mui-container')
 
-    p_tags = result.find_all('p')
+    p_tags = result.find_all(['p','pre','h2','h3'])
 
     nxt_btn = result.find('div',class_='nxt-btn')
 
@@ -31,10 +31,16 @@ while(url):
         break
 
     for p_tag in p_tags:
-
-        doc.add_paragraph(p_tag.text)
+        if(p_tag.name == 'h2' or p_tag.name == 'h3'):
+             para = doc.add_paragraph()
+             bold_para = para.add_run(p_tag.text)
+             # Setting bold to true
+             bold_para.bold = True
+        
+        else:
+            doc.add_paragraph(p_tag.text)
 
     url = baseURL + nxt_btn_href
 
 
-doc.save('python.docx')    
+doc.save('ScrapedData.docx')    
